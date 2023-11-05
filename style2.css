@@ -42,13 +42,13 @@ nav {
 nav ul li {
     list-style: none;
     display: inline-block;
-    margin-left: 60px;
+    margin-left: 30px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: rgb(255, 251, 0);
-    font-size: 30px;
+    color: rgb(252, 252, 252);
+    font-size: 25px;
 }
 
 .row {
@@ -178,7 +178,7 @@ h5 {
     }
 
     nav ul li a:hover {
-        color: #ff6600;
+        color: #fdfdfd;
         /* Cambiamos el color al pasar el cursor */
     }
 
@@ -231,5 +231,5 @@ h5 {
 
 /* Cambio de color del menú al pasar el cursor para todas las pantallas */
 .navbar nav ul li a:hover {
-    color: #eed305;
+    color: #ee7905;
 }
