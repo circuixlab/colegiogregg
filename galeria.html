@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Fotos - Día de Muertos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            grid-gap: 20px;
+            padding: 40px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(187, 143, 206, 0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .modal img {
+            width: 100%;
+            height: auto;
+        }
+
+        .close {
+            color: #7FB3D5;
+            font-size: 30px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            cursor: pointer;
+        }
+
+        button {
+            width: 180px;
+            color: #ffffff;
+            font-size: 20px;
+            padding: 12px 0;
+            background: #cf0a79;
+            border: 0;
+            border-radius: 20px;
+            outline: none;
+            margin-top: 30px;
+            text-decoration: none;
+        }
+
+        a {
+            color: azure;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gallery">
+        <img src="https://viajes.nationalgeographic.com.es/medio/2022/10/27/dia-de-los-muertos_67132e4a_1183x887.jpg"
+            alt="Día de Muertos 1">
+        <img src="https://c.files.bbci.co.uk/DDDA/production/_115149765_db4c2ec4-c6cf-418a-9a7f-1b43bb2ede25.jpg"
+            alt="Día de Muertos 2">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTislyQQpc6aifrisUIFL7sVjvzs9dulcSvRg&usqp=CAU"
+            alt="Día de Muertos 3">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFtasSfsGWAUcClGIcd32Mthnn15diM6lv4A&usqp=CAU"
+            alt="Dia de Muertos 4">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkYVStrimTFtemKKj-amVJnVpYJq97vpUHkQ&usqp=CAU"
+            alt="Dia de Muertos 5">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlHdKVHmZwzBgvaDtnHwDktJSE8UwI0cLx6g&usqp=CAU"
+            alt="Dia de muertos 6">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmE7hXbD57Pjz7W4jBXReDNjsmrBAFubLikyRGfiqSsIWgtoKq9Dy04KL4N82s3h__eY0&usqp=CAU"
+            alt="Dia de muertos 7">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8FrLNOUnXs3ZXvGuFbSPmhsX0F2kzyC5kIg&usqp=CAU"
+            alt="Dia de muertos 8">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJUmZ9p3UcDvYZeZwY-q6osVvpeolMThOPGw&usqp=CAU"
+            alt="Dia de muertos 9">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRah9DqkPGjATHVCrfqI53aGLNwZr913z8rwA&usqp=CAU"
+            alt="Dia de muertos 10">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGOFpeRrpdu-X4X_a2l41nVvnGEuAqOpDvEw&usqp=CAU"
+            alt="Dia de muertos 11">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtVGs9nWLz118HJtosLlIX60ujpwXzqIqVWw&usqp=CAU"
+            alt="Dia de muertos 12">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8Km47EozW7MqrCZs1AGktVFmK4EcFEVXyYw&usqp=CAU"
+            alt="Dia de muertos 13">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZFwqL0bnH7eggp0qupZItOaKRhDIzNPXeSk_10YdvKK2zf7CyGgvLJNqhO1UNT-rR3Q&usqp=CAU"
+            alt="Dia de muertos 14">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1QhrWDV5KjHO8Do_PRGoQSl0PZ7Oh1WzxGg&usqp=CAU"
+            alt="Dia de muertos 15">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNmWGBUn1Wpeu86jI0-BFJPXgU_63j0mxl-A&usqp=CAU"
+            alt="Dia de muertos 16">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQMqis0cGdI2QnGkYC1QwzpfdMv67MBj2hgg&usqp=CAU"
+            alt="Día de Muertos 17">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9L6crQVq0uUBCs5qKeoWBpea1huT7bv26D5wcYm_MWLZCluNsI4nNgyoV6MB8aNjXZro&usqp=CAU"
+            alt="Día de Muertos 18">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsO3rkQ-2kfMvm9te4DOYCfqy3tO1PzmAgo-GTbPeWhlL-GDiLo2EANxi-Mr3frqNk23E&usqp=CAU"
+            alt="Día de Muertos 19">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA8OGXIuLuo_eKceElUV-AHzxxjdsKiMqopu7RIn3Ugzt34yZz4Zk0T2RrnTtRfpHVfbc&usqp=CAU"
+            alt="Día de Muertos 20">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMNBjsKKGv3MQndbNW15Y3r1DiE0NOy29VFsnguv0YUxYBXEDkzQyO_y66qmMXfQ9jRog&usqp=CAU"
+            alt="Día de Muertos 21">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU8t1hLzloDEoOibHGnWEcgRV7YHjN2A-qNif4U9bRjH0TaYu6nryPuOrKEPFJrIlnjMI&usqp=CAU"
+            alt="Día de Muertos 22">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbf3Rq8mxzXr7qxqgeAFqF2oU1S6heQobE14IS5wMpi2psC-14eAL0AxFHM2pzOUzSnr4&usqp=CAU"
+            alt="Día de Muertos 23">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnERPfw0RGWYOh1OF68gNgcKB0yBDbWgstiQ&usqp=CAU"
+            alt="Día de Muertos 24">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtG-dZj2bQZkUH-UjxDk91gowD3nYMBQHf0g&usqp=CAU"
+            alt="Día de Muertos 25">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2iuCDjET-tWtjR50G--eiRvsPFHMOVaIoXg&usqp=CAU"
+            alt="Día de Muertos 26">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv7SE-LpX63R93xQgM9BccezfdJfJQ80nXQQ&usqp=CAU"
+            alt="Día de Muertos 27">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvAvqpFJj6o5N_bmDIMNyD04T8uqeqioZMTw&usqp=CAU"
+            alt="Día de Muertos 28">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZhmrgJLrNNvPD9AjJiVnYv6HCGqGS-53Jmg&usqp=CAU"
+            alt="Día de Muertos 29">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgbid4Gsg667bRuQKcswHlKrR3C-6rTvn5yA&usqp=CAU"
+            alt="Día de Muertos 30">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzbxJ_lxHok0C7UoYZhlR3TEN80y2pPD5mfQ&usqp=CAU"
+            alt="Día de Muertos 31">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCOHo28b58BWom6mCeR8-W5GI6sBOPK6QOvg&usqp=CAU"
+            alt="Día de Muertos 32">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT83bYSjUk2PhLO-5z7xF8BobHS_INgCW_kkwpYpB1cr-OQWZKb4Ih7WLqfRyzgBbRxtU8&usqp=CAU"
+            alt="Dia de Muertos 33" <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT64VHC23FeaN3-Ewx5JPJrRVArwMu21262VCZ0qMWQBSQEG76eV8IxXk3tifoI-g_Z_d0&usqp=CAU"
+            alt="Dia de Muertos 34" <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1wv5vV_fd3Xeab1sdxghL2jLyMU_2nsiYox_dv6x01M6vevjPW_rm0LO9x6E-xc8ED6Y&usqp=CAU"
+            alt="Dia de Muertos 35" <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFovdvmxuAlz_UZgcHRM8k2QVLem_ZTWnU-7jIdq8COArk_nJeq734ldfEpstSveasWm8&usqp=CAU"
+            alt="Dia de Muertos 36" <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPeVZ2Ug7VNXErEzx31VrMTaD4D7rTaKZtSg&usqp=CAU"
+            alt="Dia de Muertos 37" <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbZqJgTMpH4YeqKw3o_tx9RTmBBMIb0kBu2Q&usqp=CAU"
+            alt="Dia de Muertos 38" <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2bI8bnD3jubCEkHFGVtr3v9sqkBH_Hw5wpg&usqp=CAU"
+            alt="Dia de Muertos 39" <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-w0q-M0h-vu4dCOkbmRDjRuvpsueeXBECEw&usqp=CAU"
+            alt="Dia de Muertos 40" </div> <!-- Modal para mostrar la imagen a tamaño completo -->
+        <div id="modal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modal-image">
+        </div>
+
+        <script>
+            const modal = document.getElementById('modal');
+            const images = document.querySelectorAll('.gallery img');
+            const modalImg = document.getElementById('modal-image');
+
+            images.forEach(img => {
+                img.addEventListener('click', function () {
+                    modal.style.display = 'block';
+                    modalImg.src = this.src;
+                });
+            });
+
+            const close = document.getElementsByClassName('close')[0];
+            close.addEventListener('click', function () {
+                modal.style.display = 'none';
+            });
+        </script>
+
+        <button type="button">
+            <a href="index.html">INICIO</a> <!-- Da el nombre al boton: ver video -->
+        </button>
+
+</body>
+
+</html>
